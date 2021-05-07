@@ -1,0 +1,2 @@
+snakemake_out: "/hpc-home/linsmith"
+temp_dir: /ei/scratch/linsmith/tmp/

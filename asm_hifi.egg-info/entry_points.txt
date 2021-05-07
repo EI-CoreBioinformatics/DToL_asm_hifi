@@ -1,0 +1,3 @@
+[console_scripts]
+asm_hifi = asm_hifi.__main__:main
+

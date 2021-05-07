@@ -1,0 +1,29 @@
+{
+  "__default__": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1",
+    "time": "168:00:00",
+    "exclude": "t128n25"
+  },
+  "align": {
+    "partition": "ei-largemem",
+    "memory": "600000",
+    "c": "32"
+  },
+  "freebayes": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1"
+  },
+  "bcf_concat": {
+    "partition": "ei-medium",
+    "memory": "64000",
+    "c": "8"
+  },
+  "vcf_changes": {
+    "partition": "ei-medium",
+    "memory": "64000",
+    "c": "8"
+  }
+}

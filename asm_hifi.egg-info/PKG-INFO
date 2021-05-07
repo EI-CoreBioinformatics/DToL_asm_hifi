@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: asm-hifi
+Version: 0.1
+Summary: asm_hifi
+
+Home-page: UNKNOWN
+Author: Gareth Linsmith
+Author-email: gareth.linsmith@earlham.ac.uk
+License: MIT
+Description: asm_hifi
+        
+Keywords: genome assembly QA bioinformatics
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Scientific Engineering :: Bio/Informatics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6

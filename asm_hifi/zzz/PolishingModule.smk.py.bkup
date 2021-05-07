@@ -1,0 +1,35 @@
+#from os.path import *
+#from shutil import *
+#from asm_hifi import AssemblySheet
+
+#def get_sample(wc):
+#	return wc.sample
+
+#def get_assembly_path(wc):
+#	return assembly_sheet.assemblies[wc.sample]
+
+localrules: all, testpipe
+
+#assembly_sheet = AssemblySheet(config['assembly_sheet'])
+#TARGETS = []
+#for sample_name in assembly_sheet.assemblies:
+#	TARGETS.append(join(config["output_base_dir"],"Samples",sample_name,sample_name + ".done"))
+
+#print(TARGETS)
+
+TARGETS = ['/ei/scratch/linsmith/TESTASSEM/out.touch']
+
+rule all:
+	input: TARGETS
+
+rule testpipe:
+	input:
+		"/ei/scratch/linsmith/TESTASSEM/in.touch"
+	output:
+		"/ei/scratch/linsmith/TESTASSEM/out.touch"#config["output_base_dir"] + "/Samples/{sample_name}/{sample_name}.done"
+#	params:
+#		outdir = config["output_base_dir"],
+#		sample = "Oshiranus" 
+	shell:
+		#"mkdir -p {params.outdir}/Samples/{params.sample} && touch {output}"
+		"cp {input.in1} {output.out1}"
