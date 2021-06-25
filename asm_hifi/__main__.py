@@ -19,16 +19,6 @@ def add_default_options(parser):
 	common_group.add_argument("--dryrun", help="dry run",action="store_true")
 	make_exeenv_arg_group(parser, default_hpc_config_file=DEFAULT_HPC_CONFIG, allow_mode_selection=False, silent=True)
 
-def add_polishing_parser(subparsers):
-	polishing_parser = subparsers.add_parser(
-		"Polish",
-		help="",
-		description=""
-	)
-	polishing_parser.add_argument("assembly_sheet", type=str)
-	add_default_options(polishing_parser)
-	polishing_parser.set_defaults(runmode="polish")
-
 def add_assembly_parser(subparsers):
 	assembly_parser = subparsers.add_parser(
 		"Assemble",
@@ -62,15 +52,12 @@ def main():
 
 	add_assembly_parser(subparsers)
 	add_qc_parser(subparsers)
-	add_polishing_parser(subparsers)	
 	
 	args = ap.parse_args()
 	if args.runmode == "assemble":
 		module = AssemblyModule(args)
 	elif args.runmode == "qc":
 		module = QCModule(args)
-	elif args.runmode == "polish":
-		module = PolishingModule(args)
 	else:
 		sys.exit("Module not recognised")
 	module.run()
