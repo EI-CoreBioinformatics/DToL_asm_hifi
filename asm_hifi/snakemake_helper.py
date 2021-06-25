@@ -209,7 +209,7 @@ def run_snakemake(snakefile, out_dir, cfg_file, exe_env, dryrun=False, unlock=Fa
 						forceall=dryrun,
 						verbose=True,
 						restart_times=3,
-						use_conda=True,
+						use_conda=False,
 						use_singularity=True
 						# allowed_rules=args.allowed_rules
 						)

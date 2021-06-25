@@ -1,2 +1,1 @@
-snakemake_out: "/hpc-home/linsmith"
-temp_dir: /ei/scratch/linsmith/tmp/
+cutadapt_params: "--action lowercase -O 40 --errors 4 -b ATCTCTCTCTTTTCCTCCTCCTCCGTTGTTGTTGTTGAGAGAGAT"

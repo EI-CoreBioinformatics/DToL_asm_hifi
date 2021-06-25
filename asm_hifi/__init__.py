@@ -156,7 +156,12 @@ class QCModule(AssemHiFi):
 	def read_default_config(self):
 		assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
 	def create_run_config(self):
-		shutil.copyfile(self.default_config_path,self.run_config_path)
+		with open(self.default_config_path,'r') as yamlfile:
+			with open(self.run_config_path,'w') as run_config:
+				for line in yamlfile:
+					run_config.write(line)
+				run_config.write("output_base_dir: " + self.args.outdir + "\n")
+				run_config.write("sample_sheet: " + self.args.sample_sheet + "\n")
 
 class AssemblyModule(AssemHiFi):
 	def __init__(self,args):
@@ -164,4 +169,10 @@ class AssemblyModule(AssemHiFi):
 	def read_default_config(self):
 		assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
 	def create_run_config(self):
-		shutil.copyfile(self.default_config_path,self.run_config_path)
+		with open(self.default_config_path,'r') as yamlfile:
+			with open(self.run_config_path,'w') as run_config:
+				for line in yamlfile:
+					run_config.write(line)
+				run_config.write("output_base_dir: " + self.args.outdir + "\n")
+				run_config.write("sample_sheet: " + self.args.sample_sheet + "\n")
+				run_config.write("HIFIASM_KEEP_BIN_FILES: False\n")

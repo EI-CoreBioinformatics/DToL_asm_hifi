@@ -35,7 +35,7 @@ def add_assembly_parser(subparsers):
 		help="",
 		description=""
 	)
-	assembly_parser.add_argument("--assembly_path", type=str)
+	assembly_parser.add_argument("sample_sheet", type=str)
 	add_default_options(assembly_parser)
 	assembly_parser.set_defaults(runmode="assemble")
 
@@ -45,6 +45,7 @@ def add_qc_parser(subparsers):
 		help="",
 		description=""
 	)
+	qc_parser.add_argument("sample_sheet", type=str)
 	qc_parser.add_argument("--assembly_path", type=str)
 	add_default_options(qc_parser)
 	qc_parser.set_defaults(runmode="qc")

@@ -15,5 +15,4 @@ asm_hifi.egg-info/top_level.txt
 asm_hifi/etc/asm_hifi.config.yaml
 asm_hifi/etc/hpc_config.json
 asm_hifi/zzz/AssemblyModule.smk.py
-asm_hifi/zzz/PolishingModule.smk.py
 asm_hifi/zzz/QCModule.smk.py

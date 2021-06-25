@@ -34,12 +34,7 @@ setup(
 	packages=find_packages(exclude=["test"]),
 	install_requires=["snakemake>=4.4.0","drmaa","matplotlib"],
 	entry_points={"console_scripts": ["asm_hifi=asm_hifi.__main__:main"]},
-	#package_data={"asm_hifi.zzz": ["*.smk.py"]},
 	include_package_data=True,
-	data_files=[('asm_hifi/etc',['asm_hifi/etc/asm_hifi.config.yaml','asm_hifi/etc/hpc_config.json']),('asm_hifi/zzz',['asm_hifi/zzz/PolishingModule.smk.py','asm_hifi/zzz/QCModule.smk.py','asm_hifi/zzz/AssemblyModule.smk.py'])]
-	#data_files=[("asm_hifi/etc", glob.glob("asm_hifi/etc/*.*.*")), 
-	#data_files=[("Snake", glob.glob("asm_hifi/zzz/*.smk.py")),
-	#("asm_hifi/etc", glob.glob("asm_hifi/etc/*"))]
-	#('Config', ['asm_hifi/etc/asm_hifi.config.yaml','asm_hifi/etc/hpc_config.json'])]
+	data_files=[('asm_hifi/etc',['asm_hifi/etc/asm_hifi.config.yaml','asm_hifi/etc/hpc_config.json']),('asm_hifi/zzz',['asm_hifi/zzz/QCModule.smk.py','asm_hifi/zzz/AssemblyModule.smk.py'])]
 )
 
