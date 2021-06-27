@@ -1,9 +1,9 @@
 ### DToL_asm_hifi
 Assembly (Hifi) pipeline
 
-##Installation
+## Installation
 
-#Python Dependencies
+# Python Dependencies
 
 Requires python >=3.4
 
