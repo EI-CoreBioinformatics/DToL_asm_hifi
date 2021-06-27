@@ -1,1 +1,9 @@
 cutadapt_params: "--action lowercase -O 40 --errors 4 -b ATCTCTCTCTTTTCCTCCTCCTCCGTTGTTGTTGTTGAGAGAGAT"
+load:
+        cutadapt: "source cutadapt-3.2_CBG"
+        hifiasm: "source hifiasm-0.12"
+        yak: "source yak-0.1_CBG"
+        minimap2: "source minimap2-2.11"
+        asset: "source asset-1.0.0_CBG"
+        kat: "source kat-dev"
+        bbmap: "source bbmap-38.06"

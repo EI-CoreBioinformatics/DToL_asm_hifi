@@ -36,14 +36,29 @@
     "memory": "8000",
     "c": "1"
   },
+  "asm_stats": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1"
+  },
+  "asset_filt_primary": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1"
+  },
   "kat": {
     "partition": "ei-medium",
     "memory": "64000",
     "c": "16"
   },
-  "kraken": {
-    "partition": "ei-largemem",
-    "memory": "960000",
-    "c": "32"
+  "summary": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1"
+  },
+  "summary_haploid": {
+    "partition": "ei-medium",
+    "memory": "8000",
+    "c": "1"
   }
 }

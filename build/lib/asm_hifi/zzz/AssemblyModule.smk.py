@@ -117,9 +117,10 @@ rule cutadapt:
 		get_read_file
 	output:
 		os.path.join(config['output_base_dir'],"{sample}","reads","{read_bname}" + ".cutadapt.keep.fastq"),
-		os.path.join(config['output_base_dir'],"{sample}","reads","{read_bname}" + ".cutadapt.reject.fastq")
+		os.path.join(config['output_base_dir'],"{sample}","reads","{read_bname}" + ".cutadapt.reject.fastq"),
+		os.path.join(config['output_base_dir'],"{sample}","reads","{read_bname}" + ".cutadapt.keep.fastq.log")
 	params:
-		load = loadPreCmd("source cutadapt-3.2_CBG"),
+		load = loadPreCmd(config["load"]["cutadapt"]),
 		outdir = config['output_base_dir'],
 		sample = get_sample,
 		cutadapt_params = config['cutadapt_params']
@@ -128,7 +129,7 @@ rule cutadapt:
 	resources:
 		mem_mb = lambda wildcards, attempt: HPC_CONFIG.get_memory("cutadapt") * attempt
 	shell:
-		"{params.load} mkdir -p {params.outdir}/{params.sample}/reads && cutadapt --untrimmed-output {output[0]} {params.cutadapt_params} -o {output[1]} --rc {input}"
+		"{params.load} mkdir -p {params.outdir}/{params.sample}/reads && cutadapt --untrimmed-output {output[0]} {params.cutadapt_params} -o {output[1]} --rc {input} > {output[2]} 2>&1"
 
 rule hifiasm:
 	input:
@@ -141,7 +142,7 @@ rule hifiasm:
 		sample = get_sample,
 		purge_level = get_purge_level,
 		purge_arg = get_purge_arg,
-		load = loadPreCmd("source hifiasm-0.12")
+		load = loadPreCmd(config["load"]["hifiasm"])
 	threads:
 		8
 	resources:

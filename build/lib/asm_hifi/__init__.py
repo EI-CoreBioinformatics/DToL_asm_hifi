@@ -38,15 +38,12 @@ class AssemHiFi:
 	def read_default_config(self):
 		assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
 	def create_run_config(self):
-		print("IN CREATE RUN CONFIG SUPERCLASS")
 		with open(self.default_config_path,'r') as yamlfile:
 			with open(self.run_config_path,'w') as run_config:
 				for line in yamlfile:
 					run_config.write(line)
 				run_config.write("output_base_dir: " + self.args.outdir + "\n")
-				print(self.args.outdir)
 				run_config.write("sample_sheet: " + self.args.sample_sheet + "\n")
-				print(self.args.sample_sheet)
 	def run(self):
 		if os.path.exists(self.done_marker_path) and self.args.rerun:
 			os.remove(self.done_marker_path)
@@ -64,21 +61,10 @@ class AssemHiFi:
 class QCModule(AssemHiFi):
 	def __init__(self,args):
 		AssemHiFi.__init__(self,args)
-	#def read_default_config(self):
-	#	assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
-	#def create_run_config(self):
-	#	with open(self.default_config_path,'r') as yamlfile:
-	#		with open(self.run_config_path,'w') as run_config:
-	#			for line in yamlfile:
-	#				run_config.write(line)
-	#			run_config.write("output_base_dir: " + self.args.outdir + "\n")
-	#			run_config.write("sample_sheet: " + self.args.sample_sheet + "\n")
 
 class AssemblyModule(AssemHiFi):
 	def __init__(self,args):
 		AssemHiFi.__init__(self,args)
-	#def read_default_config(self):
-	#	assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
 	def create_run_config(self):
 		AssemHiFi.create_run_config(self)
 		with open(self.run_config_path,'a') as run_config:
@@ -86,10 +72,3 @@ class AssemblyModule(AssemHiFi):
 				run_config.write("HIFIASM_KEEP_BIN_FILES: True\n")
 			else:
 				run_config.write("HIFIASM_KEEP_BIN_FILES: False\n")
-		#with open(self.default_config_path,'r') as yamlfile:
-		#	with open(self.run_config_path,'w') as run_config:
-		#		for line in yamlfile:
-		#			run_config.write(line)
-		#		run_config.write("output_base_dir: " + self.args.outdir + "\n")
-		#		run_config.write("sample_sheet: " + self.args.sample_sheet + "\n")
-		#		run_config.write("HIFIASM_KEEP_BIN_FILES: False\n")
