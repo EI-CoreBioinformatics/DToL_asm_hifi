@@ -49,9 +49,19 @@ export PATH=/required_build_location/bin/:$PATH
 
 asm_hifi Assemble --outdir /output/directory sample_sheet
 
+example sample sheet:
+
+ecoli,4.6M,2,SRR10971019_subreads.fastq.gz
+
+Running Module 1 creates the sample sheet for module 2.
+
 ## Module 2:
 
 asm_hifi QC --outdir /output/directory sample_sheet
+
+example sample sheet:
+
+ecoli,/Module1_outdir/ecoli/ecoli.trimmed.reads.list,Module1_outdir/ecoli/ecoli.assem.outputs.list
 
 ## Module 3 (If 10x branch is checked out):
 
@@ -59,4 +69,8 @@ asm_hifi Polish -c 200 --outdir /output/directory sample_sheet
 
 -c paramter controls max number of cluster cores to use (here this is effectively limiting the number of jobs)
 It is important to set this. If not the pipeline will fill the cluster with freebayes jobs on an assembly with many contigs. 
+
+Example sample sheet:
+
+marigold	Assembly_all.contigs.fasta	/Reads/10X/R0073-S0006_Marigold_A10232_1_1_H32LTDRXY,/Reads/10X/R0073-S0006_Marigold_A10232_2_1_H32LTDRXY,/Reads/10X/R0073-S0006_Marigold_A10232_3_1_H32LTDRXY4
 
