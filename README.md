@@ -6,6 +6,10 @@ Assembly (Hifi) pipeline
 An Assembly Module does trimming of smrtbell adapters with cutadapt and assembly using hifiasm.
 A QC module produces various basic assembly QC metrics on the assemblies produced.
 
+## V1.2 includes the same 2 modules.
+
+And adds a summary report summarising assembly metrics and QC metrics across assemblies.
+
 ## The branch 'feature_10x_functionality'
 (Which is yet to become a release) currently adds one module which adds the functionality to polish assemblies with 10X data.
 It is intended to also add in this branch a further module for 10X scaffolding / assembly breaking.
