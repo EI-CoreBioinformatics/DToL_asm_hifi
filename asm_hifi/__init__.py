@@ -72,3 +72,16 @@ class AssemblyModule(AssemHiFi):
 				run_config.write("HIFIASM_KEEP_BIN_FILES: True\n")
 			else:
 				run_config.write("HIFIASM_KEEP_BIN_FILES: False\n")
+
+class PolishingModule(AssemHiFi):
+	def __init__(self,args):
+		AssemHiFi.__init__(self,args)
+	def read_default_config(self):
+		assertFilenameValid(os.path.join(os.path.dirname(__file__), "etc", "asm_hifi.config.yaml"), "MISSING CONFIG ERROR: Failed to find default config")
+	def create_run_config(self):
+		with open(self.default_config_path,'r') as yamlfile:
+			with open(self.run_config_path,'w') as run_config:
+				for line in yamlfile:
+					run_config.write(line)
+				run_config.write("output_base_dir: " + self.args.outdir + "\n")
+				run_config.write("assembly_sheet: " + self.args.sample_sheet + "\n")

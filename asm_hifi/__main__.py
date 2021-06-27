@@ -45,6 +45,16 @@ def add_qc_parser(subparsers):
 	add_default_options(qc_parser)
 	qc_parser.set_defaults(runmode="qc")
 
+def add_polishing_parser(subparsers):
+	polishing_parser = subparsers.add_parser(
+		"Polish",
+		help="",
+		description=""
+	)
+	polishing_parser.add_argument("assembly_sheet", type=str)
+	add_default_options(polishing_parser)
+	polishing_parser.set_defaults(runmode="polish")
+
 def main():
 	print("Starting EI asm_hifi V " + __version__)
 	if len(sys.argv) == 1:
@@ -63,6 +73,8 @@ def main():
 		module = AssemblyModule(args)
 	elif args.runmode == "qc":
 		module = QCModule(args)
+	elif args.runmode == "polish":
+		module = PolishingModule(args)
 	else:
 		sys.exit("Module not recognised")
 	module.run()
