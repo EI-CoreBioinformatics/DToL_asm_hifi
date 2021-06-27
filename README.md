@@ -36,8 +36,11 @@ pip install -I --prefix=/required_build_location dist/*whl
 ## On the EI cluster
 
 source python_miniconda-4.5.4_py3.6_gl
+
 export PYTHONPATH=/required_build_location/lib/python3.6/site-packages
+
 echo PYTHONPATH=$PYTHONPATH
+
 export PATH=/required_build_location/bin/:$PATH
 
 # Usage
