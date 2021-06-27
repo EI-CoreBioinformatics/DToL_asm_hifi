@@ -26,8 +26,11 @@ matplotlib
 ## Installation from github
 
 git clone https://github.com/EI-CoreBioinformatics/DToL_asm_hifi
+
 cd DToL_asm_hifi
-python setup.py bdist_wheel;
+
+python setup.py bdist_wheel
+
 pip install -I --prefix=/required_build_location dist/*whl
 
 ## On the EI cluster
