@@ -47,7 +47,9 @@ git clone https://github.com/EI-CoreBioinformatics/DToL_asm_hifi
 
 cd DToL_asm_hifi/asm_hifi
 
-./build.sh
+python setup.py bdist_wheel
+
+pip install -I --prefix=/required_build_location dist/*whl
 
 ## Put asm_hifi in your path on the EI cluster
 
