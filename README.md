@@ -39,7 +39,17 @@ pip install -I --prefix=/required_build_location dist/*whl
 
 ## On the EI cluster
 
+source git-2.7.1
+
 source python_miniconda-4.5.4_py3.6_gl
+
+git clone https://github.com/EI-CoreBioinformatics/DToL_asm_hifi
+
+cd DToL_asm_hifi/asm_hifi
+
+./build.sh
+
+## Put asm_hifi in your path on the EI cluster
 
 export PYTHONPATH=/required_build_location/lib/python3.6/site-packages
 
