@@ -106,8 +106,15 @@ load:
         kat: "source kat-dev"
         bbmap: "source bbmap-38.06"
         
-Otherwise replace these wiht the command to put thse dependencies in your path on your own system.
+Otherwise replace these with the command to put thse dependencies in your path on your own system.
 In a workstation / server enviroment where these are in your path just pass the empty string ""
+
+The hpc config asm_hifi/asm_hifi/etc/hpc_config.json defines the resources you wish to allocate to the various steps in the pipeline.
+This config SHOULD be edited to allocate sensible resources for the genome(s) you wish to assemble.
+The defaults should be sufficient for a fairly small genome (they are tested with e.coli and should be sufficient for arabidopsis).
+The Marigold genome is a 2.8gb tetraploid and assembles in hifiasm with 128gb of RAM. In under 48 hours using 32 cores.
+Please see the hifiasm github for benchmarking on genomes of various sizes.
+https://github.com/chhylp123/hifiasm
 
 # Usage
 
