@@ -62,18 +62,31 @@ export PATH=/required_build_location/bin/:$PATH
 # External Dependencies.
 
 YAK
+
 https://github.com/lh3/yak
+
 hifiasm
+
 https://github.com/chhylp123/hifiasm
+
 cutadapt
+
 https://cutadapt.readthedocs.io/en/stable/
+
 minimap2
+
 https://lh3.github.io/minimap2/minimap2.html
+
 asset
+
 https://github.com/dfguan/asset
+
 KAT
+
 https://kat.readthedocs.io/en/latest/walkthrough.html
+
 bbmap
+
 https://sourceforge.net/projects/bbmap/
 
 # Config
