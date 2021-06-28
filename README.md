@@ -59,6 +59,43 @@ echo PYTHONPATH=$PYTHONPATH
 
 export PATH=/required_build_location/bin/:$PATH
 
+# External Dependencies.
+
+YAK
+https://github.com/lh3/yak
+hifiasm
+https://github.com/chhylp123/hifiasm
+cutadapt
+https://cutadapt.readthedocs.io/en/stable/
+minimap2
+https://lh3.github.io/minimap2/minimap2.html
+asset
+https://github.com/dfguan/asset
+KAT
+https://kat.readthedocs.io/en/latest/walkthrough.html
+bbmap
+https://sourceforge.net/projects/bbmap/
+
+# Config
+
+The yaml configuration file asm_hifi/asm_hifi/etc/asm_hifi.config.yaml 
+Currently includes parameter settings for cutadapt for trimming SMRT seqeunce adapters. It is not recommended to alter these settings.
+
+The config file also includes instructions for how to source the various dependencies on your HPC.
+If you are running on the EI cluster these can (and should) be left alone.
+
+load:
+        cutadapt: "source cutadapt-3.2_CBG"
+        hifiasm: "source hifiasm-0.12"
+        yak: "source yak-0.1_CBG"
+        minimap2: "source minimap2-2.11"
+        asset: "source asset-1.0.0_CBG"
+        kat: "source kat-dev"
+        bbmap: "source bbmap-38.06"
+        
+Otherwise replace these wiht the command to put thse dependencies in your path on your own system.
+In a workstation / server enviroment where these are in your path just pass the empty string ""
+
 # Usage
 
 ## Module 1:
