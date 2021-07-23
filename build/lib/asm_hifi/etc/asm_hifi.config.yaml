@@ -7,3 +7,7 @@ load:
         asset: "source asset-1.0.0_CBG"
         kat: "source kat-dev"
         bbmap: "source bbmap-38.06"
+        samtools: "source samtools-1.9_CBG"
+        busco: "source busco-3.0"
+busco_dbs:
+        plant: /ei/workarea/group-pb/BUSCO_DATABASES/odb9/embryophyta_odb9/

@@ -18,15 +18,20 @@
   },
   "yak_hash": {
     "partition": "ei-medium",
-    "memory": "64000",
-    "c": "16"
+    "memory": "256000",
+    "c": "32"
   },
   "yak_qv": {
+    "partition": "ei-medium",
+    "memory": "256000",
+    "c": "32"
+  },
+  "minimap2paf": {
     "partition": "ei-medium",
     "memory": "64000",
     "c": "16"
   },
-  "minimap2paf": {
+  "minimap2bam": {
     "partition": "ei-medium",
     "memory": "64000",
     "c": "16"
@@ -47,9 +52,14 @@
     "c": "1"
   },
   "kat": {
+    "partition": "ei-largemem",
+    "memory": "600000",
+    "c": "32"
+  },
+  "busco": {
     "partition": "ei-medium",
-    "memory": "64000",
-    "c": "16"
+    "memory": "32000",
+    "c": "8"
   },
   "summary": {
     "partition": "ei-medium",
